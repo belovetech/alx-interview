@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" 
+"""
 Pascal's Triangle
 """
 
@@ -11,7 +11,7 @@ def pascal_triangle(n):
     Args:
         n (int): Size of the pascal triangle
     """
-    res = []    
+    res = []
     if (n <= 0):
         return res
     else:
@@ -27,8 +27,6 @@ def pascal_triangle(n):
             if (len(temp)):
                 res.append(temp)
     return res
-    
-    
 
 
 # def pascal_triangle2(n):
@@ -37,7 +35,7 @@ def pascal_triangle(n):
 #     Args:
 #         n (int): Size of the pascal triangle
 #     """
-    
+
 #     for i in range(n+1):
 #         for j in range(n-i):
 #             print(' ', end='')
