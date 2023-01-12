@@ -6,7 +6,7 @@
 
 def minOperations(n: int) -> int:
     """Minimum operation"""
-    if n == 0 or n == 1:
+    if n == 0 or n == 1 or not isinstance(n, int):
         return 0
 
     prev = 1
