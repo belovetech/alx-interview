@@ -6,7 +6,7 @@
 
 def minOperations(n: int) -> int:
     """Minimum operation"""
-    if n == 0 or n == 1 or not isinstance(n, int):
+    if not isinstance(n, int) or n < 2:
         return 0
 
     prev = 1
@@ -14,7 +14,6 @@ def minOperations(n: int) -> int:
 
     while n > value:
         reminder = n - value
-
         if reminder % cur == 0:
             operations += 2
             prev = cur
@@ -24,7 +23,4 @@ def minOperations(n: int) -> int:
             operations += 1
             value += prev
             cur = value
-        else:
-            return 0
-
     return operations
