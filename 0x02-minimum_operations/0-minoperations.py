@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """calculates the fewest number of operations needed to result
     in exactly n H characters in the file
 """
