@@ -38,3 +38,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         printLogStat()
         raise
+    else:
+        printLogStat()
