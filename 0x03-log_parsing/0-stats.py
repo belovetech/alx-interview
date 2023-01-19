@@ -5,11 +5,11 @@ Write a script that reads stdin line by line and computes metrics:
 import sys
 
 
-total_file_size = 0
-status = [200, 301, 400, 401, 403, 404, 405, 500]
-obj = dict.fromkeys(status, 0)
-
-if __name__ == "__main__":
+def parseLog():
+    total_file_size = 0
+    status = [200, 301, 400, 401, 403, 404, 405, 500]
+    obj = dict.fromkeys(status, 0)
+    
     count = 0
     try:
         for line in sys.stdin:
@@ -34,3 +34,6 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print(f"File size: {total_file_size}")
         raise
+    
+if __name__ == "__main__":
+    parseLog()
