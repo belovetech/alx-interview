@@ -34,7 +34,7 @@ if __name__ == "__main__":
                 pass
             count += 1
 
-            if count % 10 == 0:
+            if count == 10:
                 printLogStat()
     except KeyboardInterrupt:
         printLogStat()
