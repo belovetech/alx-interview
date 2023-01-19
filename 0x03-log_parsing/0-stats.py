@@ -36,9 +36,8 @@ if __name__ == "__main__":
             except (IndexError, ValueError):
                 pass
 
-            if count == 10:
+            if count % 10 == 0:
                 printLogStat()
-                count = 0
     except KeyboardInterrupt:
         printLogStat()
         raise
