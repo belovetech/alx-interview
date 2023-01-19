@@ -6,7 +6,7 @@ import sys
 
 
 total_file_size = 0
-status = [200, 301, 400, 401, 403, 404, 405, 500]
+status = ['200', '301', '400', '401', '403', '404', '405', '500']
 obj = dict.fromkeys(status, 0)
 
 
@@ -22,20 +22,20 @@ if __name__ == "__main__":
     count = 0
     try:
         for line in sys.stdin:
+            line = line.split()
+            count += 1
             try:
-                line = line.split()
                 total_file_size += int(line[-1])
-                count += 1
 
-                code = int(line[-2])
-                if code in status:
-                    obj[code] = obj.get(code, 0) + 1
+                if line[-2] in status:
+                    obj[line[-2]] = obj.get(line[-2], 0) + 1
 
             except (IndexError, ValueError):
                 pass
 
             if count == 10:
                 printLogStat()
+                count = 0
     except KeyboardInterrupt:
         printLogStat()
         raise
