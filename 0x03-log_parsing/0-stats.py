@@ -7,16 +7,15 @@ import sys
 
 total_file_size = 0
 status = ['200', '301', '400', '401', '403', '404', '405', '500']
-obj = {}
-# obj = dict.fromkeys(status, 0)
+obj = dict.fromkeys(status, 0)
 
 
 def printLogStat():
     """Print log statistics"""
     print("File size: {}".format(total_file_size))
     for key, value in sorted(obj.items()):
-        print("{}: {}".format(key, value))
-        # if value > 0:
+        if value > 0:
+            print("{}: {}".format(key, value))
 
 
 if __name__ == "__main__":
@@ -29,10 +28,7 @@ if __name__ == "__main__":
                 total_file_size += int(line[-1])
 
                 if line[-2] in status:
-                    try:
-                        obj[line[-2]] += 1
-                    except KeyError:
-                        obj[line[-2]] = 1
+                    obj[line[-2]] += 1
 
             except (IndexError, ValueError):
                 pass
