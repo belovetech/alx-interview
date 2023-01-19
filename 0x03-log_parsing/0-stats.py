@@ -25,15 +25,12 @@ if __name__ == "__main__":
             except Exception:
                 pass
 
-            # if count % 10 == 0:
-            if count == 10:
-                print(f"File size: {total_file_size}")
+            if count % 10 == 0:
+                print("File size: {}".format(total_file_size))
 
                 for key, value in obj.items():
                     if value > 0:
-                        print(f"{key}: {value}")
-                        
-                count = 0
+                        print("{}: {}".format(key, value))
     except KeyboardInterrupt:
-        print(f"File size: {total_file_size}")
+        print("File size: {}".format(total_file_size))
         raise
