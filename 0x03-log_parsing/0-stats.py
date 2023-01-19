@@ -28,7 +28,10 @@ if __name__ == "__main__":
                 total_file_size += int(line[-1])
 
                 if line[-2] in status:
-                    obj[line[-2]] = obj.get(line[-2], 0) + 1
+                    try:
+                        obj[line[-2]] += 1
+                    except KeyError:
+                        obj[line[-2]] = 1
 
             except (IndexError, ValueError):
                 pass
@@ -39,5 +42,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         printLogStat()
         raise
-    else:
-        printLogStat()
