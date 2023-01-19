@@ -13,17 +13,17 @@ if __name__ == "__main__":
 
     try:
         for line in sys.stdin:
-            if 'Exit' == line.rstrip():
-                break
+            try:
+                line = line.split()
+                total_file_size += int(line[8])
 
-            count += 1
+                code = int(line[7])
+                if code in status:
+                    obj[code] = obj.get(code, 0) + 1
 
-            line = line.split()
-            total_file_size += int(line[8])
-
-            code = int(line[7])
-            if code in status:
-                obj[code] = obj.get(code, 0) + 1
+                count += 1
+            except Exception:
+                pass
 
             if count % 10 == 0:
                 print(f"File size: {total_file_size}")
