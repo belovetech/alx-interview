@@ -31,7 +31,7 @@ if __name__ == "__main__":
                     try:
                         obj[line[-2]] += 1
                     except KeyError:
-                        obj[line[-2]] = 1
+                        obj[line[-2]] = 0
 
             except (IndexError, ValueError):
                 pass
