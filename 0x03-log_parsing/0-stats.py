@@ -7,16 +7,16 @@ import sys
 
 total_file_size = 0
 status = ['200', '301', '400', '401', '403', '404', '405', '500']
-# obj = dict.fromkeys(status, 0)
 obj = {}
+# obj = dict.fromkeys(status, 0)
 
 
 def printLogStat():
     """Print log statistics"""
     print("File size: {}".format(total_file_size))
-    for key, value in obj.items():
-        if value > 0:
-            print("{}: {}".format(key, value))
+    for key, value in sorted(obj.items()):
+        print("{}: {}".format(key, value))
+        # if value > 0:
 
 
 if __name__ == "__main__":
