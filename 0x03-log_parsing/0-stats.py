@@ -25,14 +25,14 @@ if __name__ == "__main__":
             try:
                 line = line.split()
                 total_file_size += int(line[-1])
+                count += 1
 
                 code = int(line[-2])
                 if code in status:
                     obj[code] = obj.get(code, 0) + 1
 
-            except:
+            except (IndexError, ValueError):
                 pass
-            count += 1
 
             if count == 10:
                 printLogStat()
