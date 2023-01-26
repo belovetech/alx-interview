@@ -3,6 +3,18 @@
 """
 
 
+masks = [128, 64, 32, 16, 8]
+
+
+def getType(num: int) -> int:
+    """Get type
+    """
+    for i in range(len(masks)):
+        if (masks[i] & num) == 0:
+            return i
+    return -1
+
+
 def validUTF8(data: list[int]) -> bool:
     """Determines if a given data set represents
      a valid UTF-8 encoding or not
@@ -22,15 +34,3 @@ def validUTF8(data: list[int]) -> bool:
         else:
             return True
     return True
-
-
-masks = [128, 64, 32, 16, 8]
-
-
-def getType(num: int) -> int:
-    """Get type
-    """
-    for i in range(len(masks)):
-        if (masks[i] & num) == 0:
-            return i
-    return -1
