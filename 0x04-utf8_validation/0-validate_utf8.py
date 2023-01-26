@@ -4,7 +4,7 @@ Determines if a given data set represents a valid UTF-8 encoding.
 """
 
 
-def getType(num: int) -> int:
+def getType(num):
     """Check the type
     """
     masks = [128, 64, 32, 16, 8]
@@ -14,7 +14,7 @@ def getType(num: int) -> int:
     return -1
 
 
-def validUTF8(data: list[int]) -> bool:
+def validUTF8(data):
     """Determines if a given data set represents
      a valid UTF-8 encoding or not
     """
