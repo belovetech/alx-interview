@@ -1,15 +1,13 @@
 #!/usr/bin/python3
 """UTF-8 Validation
-  Determines if a given data set represents a valid UTF-8 encoding.
+Determines if a given data set represents a valid UTF-8 encoding.
 """
 
 
-masks = [128, 64, 32, 16, 8]
-
-
 def getType(num: int) -> int:
-    """Get type
+    """Check the type
     """
+    masks = [128, 64, 32, 16, 8]
     for i in range(len(masks)):
         if (masks[i] & num) == 0:
             return i
@@ -22,13 +20,13 @@ def validUTF8(data: list[int]) -> bool:
     """
     for i in range(len(data)):
         curr = data[i]
-        type = getType(curr)
+        _type = getType(curr)
 
-        if type == 0:
+        if _type == 0:
             continue
-        elif type > 1 and i + type <= len(data):
-            while type > 1:
-                type -= 1
+        elif _type > 1 and i + _type <= len(data):
+            while _type > 1:
+                _type -= 1
                 i += 1
                 if getType(data[i]) != 1:
                     return False
