@@ -33,7 +33,7 @@ def display_board(board):
 
 
 def nQueens(board):
-    """Print board of NxN
+    """n queens problem of placing n non-attacking queens on an n×n
     """
     res = []
     for i in range(len(board)):
