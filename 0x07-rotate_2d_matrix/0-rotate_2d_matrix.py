@@ -6,7 +6,7 @@
 """
 
 
-def rotate_2d_matrix(matrix: list[list[int]]) -> None:
+def rotate_2d_matrix(matrix):
     """ Rotate 2D matrix by 90 degree clockwise (right rotate)
     """
     N = len(matrix)
