@@ -13,10 +13,9 @@ You can assume you have an infinite number of each denomination
 of coin in the list
 Your solution’s runtime will be evaluated in this task
 """
-from typing import List
 
 
-def makeChange(coins: List[int], total: int) -> int:
+def makeChange(coins, total):
     """Make changes
     """
     if total <= 0:
