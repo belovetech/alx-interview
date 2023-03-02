@@ -18,26 +18,15 @@ that returns the perimeter of the island described in grid:
 
 def island_perimeter(grid):
     """Find the perimeter of island
-
-    Formular for calculating perimeter
-        2 * (length + width)
     """
-    row = len(grid)
-    col = len(grid[0])
-    length = 0
-    width = 0
+    perimeter = 0
 
-    for r in range(row):
-        for c in range(col):
+    for r in range(len(grid)):
+        for c in range(len(grid[0])):
             if grid[r][c] == 1:
-                while grid[r][c] == 1:
-                    length += 1
-                    r += 1
-                r -= 1
-
-                while grid[r][c] == 1:
-                    width += 1
-                    c += 1
-                return (2 * (length + width))
-            else:
-                continue
+                perimeter += 4
+                if r > 0 and grid[r-1][c] == 1:
+                    perimeter -= 2
+                if c > 0 and grid[r][c-1] == 1:
+                    perimeter -= 2
+    return perimeter
